@@ -5,7 +5,9 @@
 }
 
 .nav {
-  background-color: aqua;
+  border: 1px solid #7387ff;
+  border-left: none;
+  border-right: none;
   display: flex;
   justify-content: space-between;
   width: 80%;
@@ -18,8 +20,12 @@
   justify-content: flex-start;
   align-items: center;
   width: 60%;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
+
+/* img {
+  font-size: 20px;
+} */
 
 .render {
   margin-right: 50px;
@@ -38,7 +44,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 2px solid blueviolet;
+  /* border: 2px solid blueviolet; */
   width: 30%;
 }
 
@@ -66,27 +72,41 @@
 .parent {
   /* display: flex;
   flex-direction: row; */
-    background-color: aquamarine;
+  /* background-color: aquamarine; */
   width: 80%;
   height: 100vh;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  /* gap: 5px; */
+  padding: 10px 10px 10px 0px;
 }
 
 h2 {
-  background-color: blue;
+  /* background-color: blue; */
   padding-top: 30px;
   padding-bottom: 30px;
   width: 80%;
   margin: 0 auto;
 }
 
-.static-sites-box {
+.row-one {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 10px;
+}
+
+.box {
   background-color: #f7f9fd;
-  /* background-color: skyblue; */
-  width: 20%;
-  height: 230px;
-  border-radius: 10px;
-  border: 1px solid skyblue;
+    /* background-color: skyblue; */
+    width: 100%;
+    display: flex;
+    height: 230px;
+    border-radius: 10px;
+    border: 1px solid skyblue;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 h3 {
@@ -100,27 +120,15 @@ p {
   text-align: justify;
   font-size: 14px;
   padding-bottom: 40px;
-}
-
-.btn {
-  margin-left: 15px;
-  border: 1px solid skyblue;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 10px;
 }
 
 .color-Static-Sites {
   color: #7387ff;
 }
 
-.web-services-box {
-  background-color: #f7f9fd;
-  /* background-color: skyblue; */
-  width: 20%;
-  height: 230px;
-  border-radius: 10px;
-  border: 1px solid skyblue;
+.box h3 {
+  font-size: 15px;
+  font-weight: 700;
 }
 
 h3 {
@@ -134,14 +142,6 @@ p {
   text-align: justify;
   font-size: 14px;
   padding-bottom: 40px;
-}
-
-.btn {
-  margin-left: 15px;
-  border: 1px solid skyblue;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 10px;
 }
 
 .color-web-services {
@@ -204,14 +204,6 @@ p {
   padding-bottom: 40px;
 }
 
-.btn {
-  margin-left: 15px;
-  border: 1px solid skyblue;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 10px;
-}
-
 .color-background-workers {
   color: #7387ff;
 }
@@ -236,14 +228,6 @@ p {
   text-align: justify;
   font-size: 14px;
   padding-bottom: 40px;
-}
-
-.btn {
-  margin-left: 15px;
-  border: 1px solid skyblue;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 10px;
 }
 
 .color-cron-jobs {
@@ -272,14 +256,6 @@ p {
   padding-bottom: 40px;
 }
 
-.btn {
-  margin-left: 15px;
-  border: 1px solid skyblue;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 10px;
-}
-
 .color-PostgreSQL {
   color: #7387ff;
 }
@@ -304,14 +280,6 @@ p {
   text-align: justify;
   font-size: 14px;
   padding-bottom: 40px;
-}
-
-.btn {
-  margin-left: 15px;
-  border: 1px solid skyblue;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 10px;
 }
 
 .color-redis {
@@ -340,14 +308,25 @@ p {
   padding-bottom: 40px;
 }
 
-.btn {
-  margin-left: 15px;
-  border: 1px solid skyblue;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 10px;
-}
-
 .color-blueprints {
   color: #7387ff;
+}
+
+
+@media screen and (max-width: 426px) {
+  .nav {
+    flex-direction: column;
+  }
+  .row-one {
+    grid-template-columns:1fr;
+    gap: 7px;
+}
+}
+
+@media screen and (max-width: 769px) {
+  .row-one {
+  
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+}
 }
